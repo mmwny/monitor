@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; connect-src *;">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Monitor</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+
+    <div id="stats-parent">
+      <div id="stats-parent-cpu-info"></div>
+      <div id="stats-parent-cont"></div>
+    </div>
+
+    <div class="tasks-parent">
+      <div class="task-parent-heading">
+        <div class="task-parent-heading__header-text">
+          <h1>Tasks</h1>
+          <p id="task-parent-heading__task-counter"></p>
+        </div>
+        <div class="task-parent-heading__date-control">
+          <span id="task-parent-heading__dat-control-back">◀</span>
+          <p id="task-parent-heading__date-control-date"></p>
+          <span id="task-parent-heading__dat-control-forward">▶</span>
+        </div>
+      </div>
+      <section id="task-parent-container">
+        <!-- Tasks dynamically load here -->
+      </section>
+      <form class="task-parent-form" id="tasks-form">
+        <label for="task" class="hidden">Add Task</label>
+        <input type="text" name="task" class="task-parent-form__input" placeholder="What do you need to do...">
+        <button type="submit" class="task-parent-form__submit-btn">Add</button>
+      </form>
+    </div>
+
+    <script>
+      require('./renderer');
+    </script>
+  </body>
+</html>

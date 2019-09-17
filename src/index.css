@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 90vw;
+  padding: 1rem;
+  background-color: rgb(41, 45, 46);
+  color: white;
+}
+
+.hidden {
+  visibility: hidden;
+  position: absolute;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*** TEXT INPUTS */
+input[type="text"]:disabled {
+  text-decoration: line-through;
+  opacity: .6;
+}
+
+input[type="text"] {
+  font-size: 1.1rem;
+  height: 35px;
+  width: 100%;
+  margin: 0;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid white;
+  background: none;
+  color: white;
+}
+
+input[type="text"].task-parent-form__input {
+  border: none;
+  background: white;
+  color: rgb(41, 45, 46);
+  border-radius: 3px 0 0 3px;
+  padding: 3px 10px;
+}
+
+.task-parent-form__submit-btn {
+  margin: 0;
+  border-radius: 0 3px 3px 0;
+  box-shadow: none;
+}
+
+.task-parent-form__submit-btn:hover {
+  color: white;
+  background: rgb(36, 109, 36);
+}
+
+/*** CHECKBOX INPUTS */
+input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.checkbox {
+  width: 25px;
+  height: 25px;
+  margin: 0 25px 0 0;
+  position: relative;
+}
+
+.checkbox label {
+  cursor: pointer;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 0;
+  background: none;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+}
+
+.checkbox label:after {
+  opacity: 0.2;
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  background: transparent;
+  top: 5px;
+  left: 5px;
+  border: 3px solid white;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+}
+
+.checkbox label:hover:after {
+  opacity: 0.65;
+}
+
+.checkbox input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  border-color: limegreen;
+}
+
+/*** BUTTONS */
+button {
+  font-size: .9rem;
+  font-weight: bold;
+  height: 35px;
+  margin-left: 20px;
+  padding: 5px 20px;
+  border: 2px solid white;
+  border-radius: 3px;
+  background: rgb(41, 45, 46);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover {
+  box-shadow: none;
+  background: white;
+  color: rgb(41, 45, 46);
+}
+
+.red {
+  font-size: .75rem;
+  background: rgb(114, 36, 36);
+  border: none;
+}
+
+/*** TASKS CONTAINER STYLES */
+.task-parent-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-parent-heading__date-control, .task-parent-heading__header-text {
+  display: flex;
+  align-items: baseline;
+}
+
+.task-parent-heading__date-control *, .task-parent-heading__header-text * {
+  margin: 0;
+}
+
+.task-parent-heading__header-text > p {
+  margin-left: 15px;
+}
+
+.task-parent-heading__date-control > p {
+  margin: 0 7px;
+}
+
+.task-parent-heading__date-control > span:hover {
+  cursor: pointer;
+  color: rgb(114, 36, 36);
+}
+
+.task-parent-form {
+  margin-top: 25px;
+}
+
+#task-parent-container {
+  margin-top: 15px;
+  max-height: 265px;
+  overflow: scroll;
+}
+
+.task-parent-container__tasks {
+  display: flex;
+  align-items: baseline;
+  margin: 15px 0;
+}
+
+#stats-parent-cpu-info {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#stats-parent-cpu-info p {
+  margin: 0;
+}
+
+.stats-parent-cpu-info__stats {
+  font-size: 14px;
+}
+
+.stats-parent-cpu-info__header {
+  display: flex;
+  align-items: center;
+}
+
+.stats-parent-cpu-info__img {
+  max-width: 25px;
+  margin: 0 10px 0 0;
+}
+
+/**** Circles ****/
+#stats-parent-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.stats-parent__stat-cont {
+  position: relative;
+  height: 120px;
+  width: 120px
+}
+
+.progress-ring__text {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  text-align: center;
+}
+
+.progress-ring__text:first-of-type(p) {
+  font-size: 1.5rem;
+}
+
+.progress-ring__text p {
+  margin: 0 auto;
+}
+
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
