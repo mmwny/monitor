@@ -10,7 +10,8 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
-    "postinstall": "install-app-deps"
+    "postinstall": "install-app-deps",
+    "build": "electron-packager . monitor --out=\"build\" --overwrite"
   },
   "keywords": [],
   "author": "mmawhinney",
@@ -56,6 +57,7 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.44",
     "@electron-forge/maker-zip": "^6.0.0-beta.44",
     "electron": "6.0.3",
-    "electron-builder": "^21.2.0"
+    "electron-builder": "^21.2.0",
+    "electron-packager": "^14.0.6"
   }
 }
